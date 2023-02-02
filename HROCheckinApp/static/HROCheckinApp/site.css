@@ -1,0 +1,231 @@
+/* Basic.css renamed to site.css - https://vladocar.github.io/Basic.css/ */
+
+* {box-sizing: border-box}
+
+:root{
+    --sans: 1em/1.6 system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Fira Sans, sans-serif;
+    --mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, 'Courier New', monospace;
+
+	--black:#000;
+    --blue: #0074d9;
+    --darkblue: #041f74;
+	--blueaccent: #0038c6;
+    --green: #01bd5d;
+	--lightgreen: #2ae082b2;
+    --white: #fff;
+    --creamwhite: #eee;
+    --red: red;
+
+	--m1: 8px;
+    --rc: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* General settings */
+
+body {
+    margin: 0;
+    font-family: Nunito ,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--c3);
+    color: var(--c4);
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+}
+
+a {
+    color: var(--blue);  text-decoration:none
+}
+
+
+/* Headlines */
+
+h1,h2,h3,h4,h5,h6 {margin: 0.6em 0; font-weight: normal}
+
+h1 {font-size: 2.625em; line-height: 1.2}
+
+h2 {font-size: 1.625em; line-height: 1.2}
+
+h3 {font-size: 1.3125em; line-height: 1.24}
+
+h4 {font-size: 1.1875em; line-height: 1.23}
+
+h5,h6 {font-size: 1em; font-weight:bold}
+
+
+/* Rounded Corners*/
+
+pre,code,input,select,textarea,button,img {border-radius: var(--rc)}
+
+
+/* Forms */
+
+input, select, textarea, button{
+    font-size: 1em; 
+    color:var(--black); 
+    background: var(--creamwhite); 
+    border: 0; 
+    padding: 0.6em
+}
+
+button:hover, button:focus, input:hover, textarea:hover, select:hover {opacity: 0.8;}
+
+input:hover, select{
+    cursor: pointer;
+}
+
+
+/* Infinite Grid */
+
+section {display: flex; flex-flow: row wrap}
+
+[style*="--c:"], section>section, aside, article {flex:var(--blue); margin:var(--m1)}
+
+/* Cards */
+
+article {background: var(--creamwhite); border-radius: var(--rc); padding: 1em; box-shadow: 0px 1px 0px rgba(0,0,0,0.3)}
+
+[style*="--c:"]:first-child, section>section:first-child, article:first-child {margin-left:0}
+[style*="--c:"]:last-child, section>section:last-child, article:last-child {margin-right:0}
+
+
+section>section {
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 15px;
+    margin: 10px 8px 10px 8px;
+    text-align: center;
+}
+
+.top-section{
+    background: var(--blue);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header{
+    text-align: center;
+    
+}
+
+.sub-header{
+    color: var(--white);
+    background: var(--green);
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+.error-header{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.content-section{
+    background: var(--creamwhite);
+    width: 90%;
+    margin: 1rem auto;
+    box-shadow: 0 0 8px 3px rgb(0 0 0 / 2%);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.content-section>.search-form{
+    padding: 0.5rem;
+    background: var(--lightgreen);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.4rem;
+    font-weight: bold;
+    color: var(--red);
+}
+
+
+/* Buttons */
+
+.logout-btn{
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--blueaccent);
+    color: var(--white);
+    display: block;
+    height: min-content;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+}
+
+.logout-btn:hover{
+    filter: brightness(1.2);
+    translate: 0 -3px;
+}
+
+/* Navigation Bar */
+.nav-bar{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0;
+}
+
+.nav-bar>li>a{
+    padding: 1rem 2rem;
+    display: block;
+    color: var(--darkblue);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.nav-bar>li>a:hover{
+    color: var(--blue);
+}
+
+.nav-logo{
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-box{
+    display: flex;
+    align-items: center;
+}
+
+/* Footer */
+
+footer{
+    background: var(--darkblue);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

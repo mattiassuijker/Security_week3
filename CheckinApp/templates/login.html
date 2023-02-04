@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Login Hogeschool Rotterdam</title>
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="/site.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap" rel="stylesheet">
+	</head>
+	<body class="t-white has--keyboard-focus">
+		<div class="c-header header">
+		  <div class="o-container header__container">
+			<div class="header__logo">
+			  <a class="c-logo" title="Hogeschool Rotterdam" href="home.html">
+				<img class="logo__image" src="https://login.hr.nl/v1/assets/svg/logo/logo.svg" alt="Hogeschool Rotterdam" aria-hidden="true">
+			  </a>
+			</div>
+		  </div>
+		</div>
+
+		<div class="main" id="content" role="main">
+		<div class="o-container">
+			<h1>Log in</h1>
+			<form class="c-form" method="post" action="" id="form">
+			<div class="u-max-width--sm u-align--center">
+				<div class="c-input form__item input--text">
+				<div class="input__wrapper">
+					<label class="input__label" for="username">Student number or personnel code</label>
+					<input class="input__input" type="text" name="username" value="" id="username" required="required" maxlength="12" tabindex="1" accesskey="n" autofocus="autofocus">
+					<span class="focus-helper"></span>
+				</div>
+				<span class="input__error" aria-live="polite"></span>
+				</div>
+				<div class="c-input form__item input--password">
+				<div class="input__wrapper" title="Wachtwoord">
+					<label class="input__label" for="password">Password</label>
+					<input class="input__input" type="password" name="password" value="" id="password" required="required" maxlength="96" tabindex="2" accesskey="p" autocomplete="off">
+					<span class="focus-helper"></span>
+				</div>
+				<span class="input__error" aria-live="polite"></span>
+				</div>
+				
+					<div class="c-checkbox form__item checkbox--stay-logged-in" id="container_storecr" style="display: none;">
+						<div class="checkbox__wrapper">
+							<input class="checkbox__input u-sr-only" type="checkbox" name="storeCR" value="true" id="storeCRi" tabindex="3">
+							<label class="checkbox__label" for="storeCRi">Stay logged in</label>
+							<span class="checkbox__focus-helper"></span>
+						</div>
+					</div>
+				
+			</div>
+			<div id="container-error" class="form__item-error form__item--error u-max-width--lg u-align--center" style="display:none;">
+				<p id="error_message"></p>
+			</div>
+			<div class="u-text--centered">
+				<button class="c-button--primary" type="submit" id="button_submit">
+					<span class="button__label">Login</span>
+				</button>
+			</div>
+			</form>
+		</div>
+		</div>
+			
+		<div class="c-footer">
+			<div class="footer__container">
+				<p>&copy; 2023 Code Wizards</p>
+			</div>
+		</div>
+	</body>
+</html>

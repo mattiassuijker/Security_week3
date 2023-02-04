@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8">
+    <title>Test-correct</title>
+	{% load static %}
+    <link rel="stylesheet" href="{% static '/site.css' %}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body class="t-white">
+    <header>
+        <ul class="nav-bar">  
+			<div class="logo-box"><img class="nav-logo" src="https://login.hr.nl/v1/assets/svg/logo/logo.svg" alt="There should be an image here"></div>
+            <li><a href="/">Home</a> </li>
+            <li><a href="/data">Vragen Platform</a></li>
+            <a class="logout-btn" href="/login" style="margin-right: 5px; background: green;">Inloggen</a>
+        </ul>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+	<div class="c-footer">
+		<div class="footer__container">
+			<p>&copy; 2023 Code Wizards</p>
+		</div>
+	  </div>
+  </body>
+</html>

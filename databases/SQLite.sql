@@ -1,0 +1,9 @@
+--SQLite
+-- CREATE TABLE student (
+-- 	id INTEGER PRIMARY KEY,
+-- 	student_number integer(7) NOT NULL,
+-- 	first_name varchar(50) NOT NULL,
+-- 	last_name varchar(50) NOT NULL,
+-- 	password varchar(100) NOT NULL,
+-- 	CONSTRAINT student_number_unique UNIQUE (student_number)
+-- );

@@ -11,7 +11,29 @@ virtualenv venv
 .\venv\scripts\activate
 pip install -r requirements.txt
 ```
+# De applicatie
+Typ de volgende commando's in de terminal om de applicatie te starten: 
+``` 
+.\venv\scripts\activate
+python app.py
+```
+Wanneer de applicatie gestart wordt kom je terecht op het inlog scherm. In de footer staan nu een aantal links/knoppen. Deze zijn niet functioneel en dienen na in gebruik name van de website naar de betreffende locaties gelinkt te worden.
 
+Nadat een gebruiker is ingelogd komt deze op het homescherm terecht. Hierop zijn enkele knoppen boven aan het scherm zichtbaar:
+1. Home
+	Deze knop brengt de gebruiker terug naar het homescherm.
+
+2. Rooster
+	Deze knop brengt de gebruiker naar de rooster pagina. Dit is op dit moment nog een stub.
+
+3. Overzicht
+	Deze knop brengt de gebruiker naar de overzicht pagina. Hierop is voor een docent te zien welke lessen er voor een bepaald vak zijn ingeplanned.
+
+4. Uitloggen
+	Deze knop logt de gebruiker uit.
+
+5. Indien de gebruiker een administrator account gebruikt, is er ook nog de knop Admin
+	
 
 # Probleemoplossing:
 1. 

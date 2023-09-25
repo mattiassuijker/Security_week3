@@ -165,13 +165,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .c-footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     margin-top: auto;
     background: #d30f4c;
     padding: 30px 20px;
     font-weight: bolder;
-    width: stretch;
+    width: 100%;
 }
 
 .c-header {
@@ -216,7 +216,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__container {
-    align-self: flex-end;
     max-width: 1024px;
     margin: auto;
     display: -webkit-flex;
@@ -373,8 +372,107 @@ h1, h2, h3, h4, h5, h6 {
 .u-text--centered, .u-text--centered-bold {
     text-align: center;
 }
-#set-present-form {
-    padding-left: 20%;
-    padding-bottom: 5%;
-    padding-top: 5%;
+
+
+
+/* new css added for overview page */
+
+.navibar{
+    float: left;
 }
+
+.navibar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff7ea;
+    background-size: cover;
+    float: right;
+    width: 100%;
+}
+
+.navibar>li {
+    float: left;
+}
+
+.navibar>li {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 40px 80px;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin-left: 0%;
+}
+
+
+.navibar > li > button{
+    background-color: black;
+    color: #fff7ea;
+    height: 30px;
+    box-shadow: none;
+    width: 100px;
+    border-style: none;
+  }
+  
+  .navibar>li:hover {
+    background-color: #d30f4c;
+    color: #fff7ea;
+  }
+  
+  button{
+    background-color:#d30f4c;
+    font-weight:700;
+    color: #fff7ea; 
+    height:42px;
+    width: 115px;
+    margin-top: 10px;
+
+    border: none;
+    border:1px solid #d30f4c;
+    border-radius:8%;
+  }
+  #container {
+      width:100%;
+      margin: auto;
+  }
+  
+  #enter{
+    height:40px;
+    width: 62%;
+    margin-left:5%;
+    margin-top: 10px;
+  }
+
+  
+  ol{
+    list-style-type: georgian;
+    font-size: 2em;
+    margin-top: -180px;
+    color: #d30f4c;
+    margin-left: 10%;
+  }
+  .secAanwezig, .secAfwezig{
+    display:grid;
+    background: #fff7ea;
+    height: 400px;
+    width: 45%;
+    float: left;
+    margin-top: 15px;
+    color: #d30f4c;
+  }
+  
+  .secAanwezig{
+    margin-left: 5%;
+    border-right: .5px solid gray;
+  }
+  .secAfwezig{
+    margin-right: 5%;
+    border-left: .5px solid gray;
+  }
+  
+  section > h2{
+    text-align: center;
+    font-size: 2.3em;
+  }

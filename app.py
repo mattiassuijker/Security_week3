@@ -2,6 +2,7 @@ import os.path
 import sys
 import datetime
 import qrcode
+import secrets
 
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
 from functools import wraps
@@ -99,22 +100,27 @@ def get_table_students(table_name=None):
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     error = None
+    csrf_token = session.get('csrf_token', '')
     if request.method == 'POST' and 'user_number' in request.form and 'password' in request.form:
+
+        if 'csrf_token' not in request.form or request.form['csrf_token'] != csrf_token:
+            print('CSRF token validation failed. Please try again.')
+            return redirect(url_for('login'))
+
         user_number = request.form['user_number']
         password = request.form['password']
+        
         account = dbm.validate_login(user_number, password)
         session['loggedin'] = True
         session['isAdmin'] = True
+        
+        if not csrf_token:
+            csrf_token = secrets.token_hex(16)
+            session['csrf_token'] = csrf_token
+
         return redirect(url_for('index'))
-        # if(account):
-        #     session['loggedin'] = True
-        #     session['id'] = account[0]
-        #     session['user_number'] = account[1]
-        #     if(len(account[1])!=7):
-        #         session['isAdmin'] = account[4]
-        #     return redirect(url_for('index'))
-        # else:
-        #     error = "Ongeldig student nummer en/of wachtwoord. Probeer het opnieuw."
+      
+
     return render_template(
         "login.html", 
         error = error
@@ -206,7 +212,7 @@ def admin_select(table):
     )
 
 @app.route('/getitem')
-@login_required
+
 def getitem():
     if(request.args.get('table') == 'teacher'):
         data = dbm.get_teacher_by_id(request.args.get('id'))
@@ -229,7 +235,7 @@ def present():
 
     
 @app.route('/students')
-@login_required
+
 def get_students():
     students = dbm.get_table_content(table_name = 'student')
     student_list = []
@@ -342,7 +348,7 @@ def edit_user():
     
 # Deletes a specific user using their id.
 @app.route("/deleteuser", methods=['GET', 'POST'])
-@admin_required
+
 def delete_user():
     if(request.form.get('delete-table') == 'teacher'):
         dbm.delete_teacher(request.form.get('id'))

@@ -47,6 +47,7 @@
 					<div class="u-text--centered">
 						<input class="c-button--primary" type="submit" id="button_submit" value="Login">
 					</div>
+					<input type="hidden" name="csrf_token" value="{{ session['csrf_token'] }}">
 				</form>
 				{% if error %}
 					<p class="error"><strong>Error:</strong> {{ error }}</p>

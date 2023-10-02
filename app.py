@@ -21,6 +21,8 @@ CORS(app)
 DATABASE_FILE = os.path.join(app.root_path, 'databases', 'dummydata.db')
 dbm = DatabaseModel(DATABASE_FILE)
 
+app.config['SESSION_COOKIE_SAMESITE'] = 'Strict'
+
 # A secret key is needed to allow for sessions.
 app.secret_key = 'Code wizards'
 

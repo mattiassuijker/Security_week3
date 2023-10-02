@@ -6,6 +6,7 @@ import secrets
 
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
 from functools import wraps
+from flask_cors import CORS
 
 from lib.tablemodel import DatabaseModel
 
@@ -15,6 +16,7 @@ FLASK_PORT = 81
 FLASK_DEBUG = True
 
 app = Flask(__name__)
+CORS(app)
 # This command creates the "<application directory>/databases/dummydata.db" path
 DATABASE_FILE = os.path.join(app.root_path, 'databases', 'dummydata.db')
 dbm = DatabaseModel(DATABASE_FILE)
@@ -113,7 +115,7 @@ def login():
         account = dbm.validate_login(user_number, password)
         session['loggedin'] = True
         session['isAdmin'] = True
-        
+
         if not csrf_token:
             csrf_token = secrets.token_hex(16)
             session['csrf_token'] = csrf_token

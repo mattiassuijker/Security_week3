@@ -2,3 +2,4 @@ pi
 passlib
 Flask
 pip install qrcode
+pip install flask-cors

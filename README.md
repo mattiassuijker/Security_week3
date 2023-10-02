@@ -18,6 +18,7 @@ Typ de volgende commando's in de terminal om de applicatie te starten:
 python app.py
 ```
 Wanneer de applicatie gestart wordt kom je terecht op het inlog scherm. In de footer staan nu een aantal links/knoppen. Deze zijn niet functioneel en dienen na in gebruik name van de website naar de betreffende locaties gelinkt te worden.
+Je kan inloggen met 0000001 en 0000001 als username and password
 
 Nadat een gebruiker is ingelogd komt deze op het homescherm terecht. Hierop zijn enkele knoppen boven aan het scherm zichtbaar:
 1. Home

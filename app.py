@@ -116,6 +116,20 @@ def generate_jwt(user_id, username):
     token = jwt.encode(payload, secret_key, algorithm='HS256')
     return token
 
+def jwt_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'jwt_token' in session:
+            try:
+                jwt.decode(session['jwt_token'], 'jouw_geheime_sleutel', algorithms=['HS256'])
+                return f(*args, **kwargs)
+            except jwt.ExpiredSignatureError:
+                flash('JWT is verlopen. Log opnieuw in.')
+        else:
+            flash('Je moet eerst inloggen.')
+        return redirect(url_for('login'))
+    return wrap
+
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     error = None

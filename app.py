@@ -3,6 +3,7 @@ import sys
 import datetime
 import qrcode
 import secrets
+import jwt
 
 from flask import Flask, jsonify, render_template, request, redirect, url_for, flash, session
 from functools import wraps

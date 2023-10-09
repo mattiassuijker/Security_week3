@@ -133,6 +133,9 @@ def login():
         session['loggedin'] = True
         session['isAdmin'] = True
 
+        jwt_token = generate_jwt(user_number, password)
+        session['jwt_token'] = jwt_token
+
         if not csrf_token:
             csrf_token = secrets.token_hex(16)
             session['csrf_token'] = csrf_token

@@ -102,6 +102,20 @@ def get_table_students(table_name=None):
 #   If so, logs the user in, creates session data for the user and redirects to the question page. 
 #   If not, displays an error on the screen.
 # Website used: https://codeshack.io/login-system-python-flask-mysql/
+
+def generate_jwt(user_id, username):
+    secret_key = 'JWT_sleutel'
+    expiration_time = datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+
+    payload = {
+        'user_id': user_id,
+        'username': username,
+        'exp': expiration_time
+    }
+
+    token = jwt.encode(payload, secret_key, algorithm='HS256')
+    return token
+
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     error = None
